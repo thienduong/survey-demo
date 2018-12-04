@@ -1,0 +1,84 @@
+<h1 class="text-info text-center">Create</h1>
+
+<form name="frm" [formGroup]="frm" class="w-100-p" fxLayout="column">
+
+  <div>
+    <!-- companyName -->
+    <div class="form-group">
+      <label for="companyName">Company Name*:</label>
+      <input class="form-control" name="companyName" formControlName="companyName" placeholder="Company Name"
+             required>
+      <span *ngIf="formErrors.companyName" class="text-danger">
+        {{formErrors.companyName}}
+      </span>
+    </div>
+
+    <!-- fullname -->
+    <div class="form-group">
+      <label for="fullName">Fullname*:</label>
+      <input class="form-control" name="fullName" formControlName="fullName" placeholder="Fullname"
+             required>
+      <span *ngIf="formErrors.fullName" class="text-danger">
+        {{formErrors.fullName}}
+      </span>
+    </div>
+
+    <!-- email -->
+    <div class="form-group">
+      <label for="email">Email*:</label>
+      <input class="form-control" name="email" formControlName="email" placeholder="Email"
+             required>
+      <span *ngIf="formErrors.email" class="text-danger">
+        {{formErrors.email}}
+      </span>
+    </div>
+
+    <!-- phoneNumber -->
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number*:</label>
+      <input class="form-control" name="phoneNumber" formControlName="phoneNumber" placeholder="Phone Number"
+             required>
+      <span *ngIf="formErrors.phoneNumber" class="text-danger">
+        {{formErrors.phoneNumber}}
+      </span>
+    </div>
+
+    <div>
+      <h2 class="text-center text-info">Please choose one or more our solusions</h2>
+    </div>
+
+    <!-- TrackAndTraceModules -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="trackAndTraceModules" formControlName="trackAndTraceModules">
+        <b><span class="text-success">TRACK AND TRACE MODULES </span><span class="hidden">Label, Dispatch</span></b>
+      </label>
+    </div>
+
+    <!-- WarehouseModules -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="warehouseModules" formControlName="warehouseModules">
+        <b><span class="text-success">WAREHOUSE MODULES </span><span class="hidden">Inbound process, Outbound process, Warehouse Layout Management</span></b>
+      </label>
+    </div>
+
+    <!-- DataAnalytics -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="dataAnalytics" formControlName="dataAnalytics">
+        <b><span class="text-success">DATA ANALYTICS </span><span class="hidden">Publishing, Consulting</span></b>
+      </label>
+    </div>
+
+
+    <div class="text-center form-group">
+      <button class="btn btn-info"
+              [disabled]="frm.invalid"
+              (click)="save()">
+        <span>Save</span>
+      </button>
+    </div>
+
+  </div>
+</form>
